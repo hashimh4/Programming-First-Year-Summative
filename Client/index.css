@@ -1,0 +1,305 @@
+/* Import Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+/* Fades-in (goes from zero to max opacity in 3 seconds) */
+.fadeIn {
+    animation: fade-in 3s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* Fades-out (goes from max to zero opacity in 10 seconds) */
+.fadeOut {
+    animation: fade-out 10s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* Defining the general style for everything */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #080201;
+    background-color: #080201;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI';
+}
+
+button, form {
+    background-color: #303030;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    border: 3px solid #303030;
+    border-radius: 5px;
+}
+
+
+h, h1, h2, h5, a, button, form {
+    font-family: 'Segoe UI';
+    font-weight: 500px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.884);
+    background-color: #080201;
+}
+
+p, li {
+    font-family: 'Segoe UI';
+    font-weight: 300px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.884);
+    background-color: #080201;  
+}
+
+li {
+    padding: 2px 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color:#303030;
+    border: 3px solid #080201;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:#757575;
+}
+
+
+/* CSS when given a key */
+.smallLogo {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.title {
+    margin-right: auto;
+    padding: 10px 25px;
+    font-family: 'Segoe UI';
+    font-weight: 800px;
+    font-size: 20px;
+    min-width: 36%;
+}
+
+.heading {
+    font-family: 'Segoe UI';
+    font-weight: 800px;
+    font-style: super bold;
+    font-size: 35px;
+    left: 3rem;
+    display: flex;
+    padding-right:150px;
+    margin-left:auto;
+}
+
+/*
+.toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+span {
+    height: 4px;
+    width: 100%;
+    background-color:#ffffff;
+    border-radius: 10px;
+}
+*/
+
+/* When the window is small enough, get rid of parts of the header*/
+@media (max-width: 860px) {
+    /*
+    .toggle {
+        display: flex;
+    }
+    */
+
+    .heading {
+        display: none;
+
+    }
+}
+
+@media (max-width: 640px) {
+    .title {
+        display: none;
+    }
+    .smallLogo {
+        margin-right: auto;
+    }
+}
+
+
+
+/*For parallax image and the text over it*/
+body {
+    color: rgba(255, 255, 255, 0.884);
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.introHeader {
+    text-align: left;
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    z-index: -1;
+}
+
+.introContent {
+    border: 3px solid #303030;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 2% 2%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.introHeader, .introHeader:before {
+    background: 50% 50% / cover;
+}
+
+.introHeader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;
+    display: block;
+    background: url(/idea.jpg);
+    background-size: cover;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: 0;
+}
+
+.homeContent, .homeTitle {
+    display: block;
+}
+
+
+.productContent, .aboutContent, .productsTitle, .aboutTitle {
+    display: none;
+}
+
+
+/* The style for the input boxes and submit button */
+.input1 {
+    width: 60%;
+}
+
+.input2 {
+    width: 100%;
+}
+
+input[type=text] {
+    background: #e7e7e7;
+    background-color: #e7e7e7;
+    font-family: 'Segoe UI';
+    font-weight: 500px;
+    font-size: 16px;
+    padding: 9px 15px;
+    margin: 4px 0;
+    border: 3px solid #303030;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+input[type=submit] {
+    background: #e7e7e7;
+    background-color: #e7e7e7;
+    font-family: 'Segoe UI';
+    font-weight: 500px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #303030;
+    color: rgba(255, 255, 255, 0.884);
+    padding: 9.5px 15px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* The style of the different sections at the bottom of the page */
+.mainContentProduct, .mainContentHome, .mainContentAbout {
+    margin: 0;
+    padding: 4% 5%;
+    border: 3px solid #303030;
+    border-radius: 5px;
+    font-family: 'Segoe UI';
+}
+
+.mainTextProduct, .mainTextContact, .mainTextHome {
+    margin: 0;
+    padding: 3% 5%;
+    border: 3px solid #303030;
+    border-radius: 5px;
+    font-family: 'Segoe UI';
+}
+
+.footer {
+    margin: 0;
+    padding: 2% 5%;
+    border: 3px solid #303030;
+    border-radius: 5px;
+    font-family: 'Segoe UI';  
+    font-size: small;
+}
+
+

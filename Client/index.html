@@ -1,0 +1,186 @@
+<!doctype html5>
+<html lang="en">
+
+    <head>
+
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <!-- Title -->
+        <title> My Thingamabob </title>
+        <link rel="shortcut icon" type="image/png" href="lightlogo.png"
+    
+        <!-- Links to the index.css document-->
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <!-- Links to the Bootstrap CSS (so that the layout is fine upon resising) over the internet instead of locally -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+   
+    </head>
+
+
+    <body>
+    <!--Navbar Containing a Logo and 3 "Pages"-->
+        <header class="top">
+            <img src="/lightlogo.png" class="smallLogo" alt="Logo">
+            <h class="title">My Thingamabob</h>
+            <h id="homeTitle" class="col-md-4 heading homeTitle"><b>WELCOME</b></h>
+            <h id="productsTitle" class="col-md-4 heading productsTitle"><b>PROJECTS</b></h>
+            <h id="aboutTitle" class="col-md-4 heading aboutTitle"><b>CONTACT</b></h>
+            <!--
+            <a href="#" class="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            -->
+            <a id="Home" href="#" class="push">
+                <button>Home</button>
+            </a>
+            <a id="Projects" href="#" class="push">
+                <button>Projects</button>
+            </a>
+            <a id="Contact" href="#" class="push">
+                <button>Contact</button>
+            </a>
+        </header>
+
+
+        <!--Audio files which can be played in conjunction with events-->
+        <audio id="music" src="" autoplay></audio>
+
+
+        
+    <!--DYNAMIC 1 (Introduction)-->
+        <!--A second header containing content and a second image-->
+        <header id="introHeader" class="introHeader">
+            <!--Title-->
+            <div class="introContent">
+                <div>
+                    <h5 id="introTitle" class="introTitle"> WELCOME </h5>
+                </div>
+
+                <!--The introduction which appears when you hover over this header-->
+                <div id="introStuff" class="">
+                    <p>Hey you there. Interested in technology? Scroll down to share an idea for an invention and share how you can make that idea come to life. You could share:</p>
+                </div>
+                <div id="introList" class="">
+                        <ul>
+                            <li>DIY projects</li>
+                            <li>Raspberry Pi projects</li>
+                            <li>Arduino projects</li> 
+                            <li>And even more...</li>
+                        </ul>
+                        <p>Or click "Projects" to see other people's ideas.</p>
+                </div>
+            </div>
+        </header>
+
+
+
+    <!--DYNAMIC 2 (Submitting), on 'Home' page-->
+        <!--Creating a form so you can input new ideas which are then stored-->
+        <div id="homeContent" class="homeContent">
+            <div id="mainText1" class="mainTextHome">
+                <p>If you would like to share your experience in creating a new thingamabob, please use the form below.</p>
+            </div>
+            <div class="row mainContentHome">
+                <form action="http://127.0.0.1:8080/ideas/add" method="POST">
+                    <input class="input1" name="newIdea" type="text" id="newIdea" placeholder="Your unique idea...">
+                </form>
+
+                <form action="http://127.0.0.1:8080/projects/add" method="POST">
+                    <input class="input2" name="newProject" type="text" id="newProject" placeholder="Your project details...">
+                    <input type="submit" id="submitProject">
+                </form>
+            </div>
+        </div>
+
+
+
+    <!--DYNAMIC 3 (Viewing)-->
+        <!--Outputs one of the stored ideas, which is random -->
+        <div id="mainContent" class="productContent">
+            <div id="mainText2" class="mainTextProduct">
+                <p>Below are all the submitted ideas. The rows contain the an idea follwed by the instructions.</p>
+            </div>
+            <div class="row mainContentProduct">
+                <h5 class="col-md-3 my-col">'    Idea'</h5>
+                <h5 class="col-md-9 my-col">'    Instructions'</h5>
+                <ol id="hellobutton" class="col-md-3 my-col"></ol>
+                <ol id="hellobuttonp" class="col-md-9 my-col"></ol>
+            </div>
+        </div>
+
+
+
+    <!--DYNAMIC 4 (About)-->
+        <div id="aboutContent" class="aboutContent">
+            <div id="mainText3" class="mainTextContact">
+                <p>Thank you for visitng this site, I hope you found the information that people have provided useful.</p>
+            </div>
+            <div id="mainText4" class="mainTextContact">
+                <p>Once again please do not hesitate in contacting us. Have a lovely day.</p>
+            </div>
+        </div>
+
+
+
+    <!--Footer-->
+        <!-- We want two columns, that'll shrink appropriately with bootstrap-->
+        <div id="footer" class="row footer">
+
+            <div class="col-md-6 my-col">
+                <p> © My Thingamabob | Created by a Durham University Student </p>
+            </div>
+            <div class="col-md-6 my-col">
+                <p> Code of ethics: Please don't steal an idea however upon submitting your ideas, you consent to other people using them </p>
+            </div>
+        </div>
+
+    </body>
+
+
+    <!--
+    <script language="javascript" type="text/javascript">
+        var socket = io.connect('127.0.0.1:8080');
+    
+        socket.on("disconnect", function () { alert("Please restart the server"); });
+    </script>
+    -->
+
+    <!-- Javascript alerts -->   
+    <!-- Selects all the items, throught the DOM, which are a direct child of the key, to give out a list
+    <script>
+        let list = document.querySelectorAll("#introList > li")
+        for (let i of list){console.log(i)}
+        //or forEach(function (i){console.log(i)})
+    </script>
+    -->
+
+    <!--Now all in index.js-->
+    <!-- Javascript event-handling example (when the button is clicked etc.) which links back to the html above) -->
+    <!--
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            var button = document.getElementById("lilbutton");
+            function lilbfunction(){
+                alert("I'm a lil button");
+            }
+            button.addEventListener("click", lilbfunction);
+        });
+   </script>
+    -->
+
+
+    <!-- This is placed at the end so the website can be rendered first -->
+    <!-- Links to a Bootstrap JS Bundle with Popper (helps to position things) over the internet instead of locally-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!--Links to the client-side javascript code-->
+    <script src="index.js"></script>     
+
+</html>
+
+
