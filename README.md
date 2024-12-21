@@ -1,6 +1,6 @@
 # Programming-Black-Summative-Assessment
 
-**First Year Programming Module - 65% average**
+**First Year (2020/2021) Programming Module - 65% average**
 
 Gadget Review and Suggestion Website. Learning to use JavaScript, HTML and CSS for standard web-development.
 
