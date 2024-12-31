@@ -6,4 +6,4 @@ Gadget Review and Suggestion Website. Learning to use JavaScript, HTML and CSS f
 
 [Video Demonstration](https://drive.google.com/file/d/1EDXANSkmhS6j96re_ZT9ZfOrnpa8f4aL/view?usp=drive_link) showcasing dynamic website features and GET and POST requests with Postman.
 
-_Disclaimer: This work is for reference only. Copying any part of this work is prohibited._
+_Disclaimer: This work is for reference only. Copying any part of this work is not prohibited._
